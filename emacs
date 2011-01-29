@@ -1,4 +1,11 @@
 ;;========================================
+;; 路径设置
+;;========================================
+
+;;我的load-path
+ (add-to-list 'load-path "~/elisp/")
+
+;;========================================
 ;; 外观设置
 ;;========================================
 
@@ -13,3 +20,21 @@
 
 ;;禁用启动画面
 (setq inhibit-startup-message t)
+
+;;========================================
+;; 颜色主题
+;;========================================
+
+;;加载color-theme
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (color-theme-hober)))
+
+;;========================================
+;; lua-mode
+;;========================================
+
+(setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
