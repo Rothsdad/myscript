@@ -1,0 +1,80 @@
+background yes
+font ubuntu:size=8
+xftfont ubuntu:size=8
+use_xft yes
+xftalpha 0.6
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades yes
+draw_outline yes
+draw_borders no
+draw_graph_borders no
+minimum_size 200
+maximum_width 270
+default_color ffffff
+default_shade_color 000000
+draw_outline no
+alignment top_right
+gap_x 12
+gap_y 45
+no_buffers yes
+cpu_avg_samples 2
+override_utf8_locale yes
+uppercase no
+use_spacer none
+
+TEXT
+${image ~/Pictures/conky/Television-Alt.png -p 10,15 -s 32x32} ${goto 50}SYSTEM
+${goto 50}Host: ${nodename} 
+${goto 50}Kernel: $kernel $machine
+${goto 50}Uptime: $uptime_short
+
+${image ~/Pictures/conky/Clock.png -p 10,73 -s 32x32} ${goto 50}DATE & TIME
+${goto 50}Date${goto 75}:${goto 85}${time %A, %d %b %Y}
+${goto 50}Time${goto 75}:${goto 85}${time %H:%M %p}
+
+${image ~/Pictures/conky/Task-Manager.png -p 10,120 -s 32x32} ${voffset 6}${goto 50}PROCCESSOR
+${goto 50}CPU 1: ${cpubar cpu0 5,65}  ${cpu cpu0}% @ ${freq_g cpu0} Ghz
+${goto 50}CPU 2: ${cpubar cpu1 5,65}  ${cpu cpu1}% @ ${freq_g cpu1} Ghz
+${goto 50}Temp: ${hwmon temp 1}°C
+
+${image ~/Pictures/conky/Memory.png -p 10,190 -s 32x32} ${goto 50}MEMORY
+${goto 50}RAM:   ${membar 5,65}  $memperc%
+${goto 50}Swap: ${swapbar 5,65}  $swapperc%
+${goto 50}Processes: $processes
+${goto 50}Running: $running_processes
+
+${goto 50}${voffset 8}${image ~/Pictures/conky/Gear.png -p 10,285 -s 32x32} ${goto 50}PROCESSES $alignc ${goto 185} ${alignr}MEM   ${alignr}CPU
+${goto 50}CPU TIME $stippled_hr
+${goto 50}${top name 1} ${goto 175}$alignr${top mem 1} $alignr${top cpu 1}
+${goto 50}${top name 2} ${goto 175}$alignr${top mem 2} $alignr${top cpu 2}
+${goto 50}${top name 3} ${goto 175}$alignr${top mem 3} $alignr${top cpu 3}
+${goto 50}${top name 4} ${goto 175}$alignr${top mem 4} $alignr${top cpu 4}
+${goto 50}TOTAL MEM $stippled_hr
+${goto 50}${top_mem name 1} ${goto 175}$alignr${top_mem cpu 1} $alignr${top_mem mem 1}
+${goto 50}${top_mem name 2} ${goto 175}$alignr${top_mem cpu 2} $alignr${top_mem mem 2}
+${goto 50}${top_mem name 3} ${goto 175}$alignr${top_mem cpu 3} $alignr${top_mem mem 3}
+${goto 50}${top_mem name 4} ${goto 175}$alignr${top_mem cpu 4} $alignr${top_mem mem 4}
+
+${image ~/Pictures/conky/Hard-Drive.png -p 10,450 -s 32x32} ${goto 50}HDD
+${goto 50}Root: ${fs_bar 4,55 /}  ${fs_used /} / ${fs_size /}
+${goto 50}Home: ${fs_bar 4,55 /home/rothsdad}  ${fs_used /home/rothsdad} / ${fs_size /home/rothsdad}
+${goto 50}Elements: ${fs_bar 4,55 /media/Elements}  ${fs_used /media/Elements} / ${fs_size /media/Elements}
+
+${image ~/Pictures/conky/Connectiions.png -p 10,520 -s 32x32} ${goto 50}LAN
+${goto 50}Download: ${downspeed eth0}
+${goto 50}Upload: ${upspeed eth0}
+${goto 50}Total Download: ${totaldown eth0} 
+
+${image ~/Pictures/conky/Task-Manager.png -p 10,590 -s 32x32} ${goto 50}GPU
+${goto 50}Core Temp: ${exec nvidia-settings -q GPUCoreTemp -t}°C
+${goto 50}Ambient Temp: ${nvidia ambient}°C
+${goto 50}GPU Speed: ${nvidia gpufreq}Mhz
+${goto 50}Mem Speed: ${nvidia memfreq}Mhz
+
+${exec feh --bg-scale "/home/rothsdad/Pictures/wallpapers/Bluri/bluri1280x800.jpg"}
