@@ -1,0 +1,23 @@
+xterm*faceSize:10
+xterm*utf8Title: true
+xterm*faceName:Terminus
+xterm*faceNameDoublesize:WenQuanYi Microhei Mono
+
+!look and feel
+xterm.termName: xterm-256color
+xterm.geometry: 80x36
+xterm*scrollBar: false
+xterm*rightScrollBar: true
+xterm*loginshell: true
+!xterm*cursorBlink: true
+xterm*background:  black
+xterm*foreground:  gray
+xterm.borderLess: true
+xterm*colorUL: yellow
+xterm*colorBD: white
+!mouse selecting to copy, ctrl-v to paste
+!Ctrl p to print screen content to file
+XTerm*VT100.Translations: #override \
+Ctrl <KeyPress> V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+<BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+!Ctrl <KeyPress> P: print() \n
