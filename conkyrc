@@ -1,0 +1,9 @@
+out_to_console yes
+out_to_x no
+background no
+update_interval 1
+total_run_times 0
+use_spacer none
+
+TEXT
+[${downspeed enp5s0}] - [$mpd_smart] - [CPU ${cpubar cpu0 5,20}] - [MEM ${membar 5,20}] - [${exec date +%r}]
